@@ -7,6 +7,8 @@ public class Hopsitexte {
         String ANSI_RESET = "\u001B[0m";
         
         Scanner scanner = new Scanner(System.in);
+
+        Texthopsen texthopsen = new Texthopsen();
         
         //String name = scanner.nextLine();
 
@@ -16,9 +18,11 @@ public class Hopsitexte {
         System.out.println("um mit der Erstellung eines Hopsitextes zu helfen kannst du nun immer einen Teil des volgenden Satzes schreiben bis du zum nachsten Buhstaben gelangst über den einer der Teilnehmer springt.");
         System.out.println("Wenn du deien Text beenden willst schreibe einfach 'end' in die Eingabe.");
 
+        String text = aktuelleEingabe;
 
         while (aktuelleEingabe != "end"){
-            
+            Hopser h = texthopsen.hopseText(text);
+
         }
 
         

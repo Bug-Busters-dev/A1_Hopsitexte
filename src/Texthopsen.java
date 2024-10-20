@@ -1,6 +1,6 @@
 
 public class Texthopsen {
-    public static void hopseText(char[] extractedLetters){
+    public void hopseText(String text){
 
         String ANSI_RESET = "\u001B[0m";
         String ANSI_RED = "\u001B[31m";
@@ -8,6 +8,7 @@ public class Texthopsen {
         String ANSI_PURPLE = "\u001B[35m";
 
         Converter converter = new Converter();
+        char[] extractedLetters = converter.textToLetters(text);
         int[] extractedNumbers = converter.lettersToNumbers(extractedLetters);
 
         Hopser hopser = new Hopser();
