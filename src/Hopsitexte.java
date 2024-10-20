@@ -18,29 +18,39 @@ public class Hopsitexte {
         System.out.println("um mit der Erstellung eines Hopsitextes zu helfen kannst du nun immer einen Teil des volgenden Satzes schreiben bis du zum nachsten Buhstaben gelangst über den einer der Teilnehmer springt.");
         System.out.println("Wenn du deien Text beenden willst schreibe einfach 'end' in die Eingabe.");
 
+        String lastText = "";
         String text = aktuelleEingabe;
         while (!aktuelleEingabe.equals("end")) {
             Hopser h = texthopsen.hopseText(text);
 
-            int x = 0;
-            if (h.currendPos1 > h.currendPos2){
-                x = h.currendPos1+1;
-            } else {
-                x = h.currendPos2+1;
-            }
+            if (h.currendPos1 == h.currendPos2){
+                System.out.println("Bitte verwende ein anderes Wort da dein Text sonst kein Hopsitext sein kann.");
+                text = lastText;
+            } else{
 
-            for (int i = texthopsen.extractedLetters.length; i <= x; i++){
-                if(i == h.currendPos1){
-                    System.out.print(ANSI_RED + "0" + ANSI_RESET);
-                }else if(i == h.currendPos2){
-                    System.out.print(ANSI_BLUE + "0" + ANSI_RESET);
-                } else{
-                    System.out.print("0");
+                int x = 0;
+                if (h.currendPos1 > h.currendPos2){
+                    x = h.currendPos1+1;
+                } else {
+                    x = h.currendPos2+1;
                 }
+
+                for (int i = texthopsen.extractedLetters.length; i <= x; i++){
+                    if(i == h.currendPos1){
+                        System.out.print(ANSI_RED + "0" + ANSI_RESET);
+                    }else if(i == h.currendPos2){
+                        System.out.print(ANSI_BLUE + "0" + ANSI_RESET);
+                    } else{
+                        System.out.print("0");
+                    }
+                }
+                System.out.println();
+
+                aktuelleEingabe = scanner.nextLine();
+                lastText = text;
+                text = text + aktuelleEingabe;
+
             }
-            System.out.println();
-            aktuelleEingabe = scanner.nextLine();
-            text = text + aktuelleEingabe;
         }
 
         
