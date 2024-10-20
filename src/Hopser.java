@@ -18,21 +18,25 @@ public class Hopser {
         currendPos2 = start2;
         while (true){
 
+                if (win != 1){
                 pos1.addLast(currendPos1);
                 currendPos1 += extractedNumbers[currendPos1];
                 nededjumps1++;
-                if (currendPos1 > extractedNumbers.length-1){
+                }
+                if (currendPos1 > extractedNumbers.length-1 && win == 0){
                     win = 1;
                 }
 
+                if (win != 2){
                 pos2.addLast(currendPos2);
                 currendPos2 += extractedNumbers[currendPos2];
                 nededjumps2++;
-                if (currendPos2 > extractedNumbers.length-1){
+                }
+                if (currendPos2 > extractedNumbers.length-1 && win == 0){
                     win = 2;
                 }
 
-                if (win != 0){
+                if (win != 0 && currendPos2 > extractedNumbers.length-1 && currendPos1 > extractedNumbers.length-1){
                     break;
                 }
 
