@@ -16,6 +16,7 @@ public class Hopsitexte {
         System.out.println("um einen Hopsitext zu schreiben beginne in der folgenden Zeile mit deinem ersten Wort: ");
         String aktuelleEingabe = scanner.nextLine();
         System.out.println("um mit der Erstellung eines Hopsitextes zu helfen kannst du nun immer einen Teil des volgenden Satzes schreiben bis du zum nachsten Buhstaben gelangst über den einer der Teilnehmer springt.");
+        System.out.println("Um fehler zu korigogieren kannst immer deinen letzten Schritt durch 'back' rückgängig machen.");
         System.out.println("Wenn du deien Text beenden willst schreibe einfach 'end' in die Eingabe.");
 
         String lastText = "";
@@ -28,14 +29,7 @@ public class Hopsitexte {
                 text = lastText;
             } else{
 
-                int x = 0;
-                if (h.currendPos1 > h.currendPos2){
-                    x = h.currendPos1+1;
-                } else {
-                    x = h.currendPos2+1;
-                }
-
-                for (int i = texthopsen.extractedLetters.length; i <= x; i++){
+                for (int i = texthopsen.extractedLetters.length; i <= Math.max(h.currendPos1+1, h.currendPos2+1); i++){
                     if(i == h.currendPos1){
                         System.out.print(ANSI_RED + "0" + ANSI_RESET);
                     }else if(i == h.currendPos2){
@@ -46,14 +40,18 @@ public class Hopsitexte {
                 }
                 System.out.println();
 
+                
                 aktuelleEingabe = scanner.nextLine();
+
+                if (aktuelleEingabe.equals("back")){
+                    text = lastText;
+                } else{
                 lastText = text;
                 text = text + aktuelleEingabe;
 
+                }
             }
         }
-
-        
         scanner.close();
     }
 }

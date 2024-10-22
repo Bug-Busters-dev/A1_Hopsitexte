@@ -13,8 +13,7 @@ public class Texthopsen {
         int[] extractedNumbers = converter.lettersToNumbers(extractedLetters);
 
         Hopser hopser = new Hopser();
-
-        int win = hopser.hopsen(0, 1, extractedNumbers);
+        hopser.hopsen(0, 1, extractedNumbers);
 
        
         System.out.println("--------------------------------------------------------------------------------------------------------------------");
