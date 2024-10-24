@@ -10,10 +10,9 @@ public class Texthopsen {
 
         Converter converter = new Converter();
         extractedLetters = converter.textToLetters(text);
-        int[] extractedNumbers = converter.lettersToNumbers(extractedLetters);
 
         Hopser hopser = new Hopser();
-        hopser.hopsen(0, 1, extractedNumbers);
+        hopser.hopsen(0, 1, extractedLetters);
 
        
         System.out.println("--------------------------------------------------------------------------------------------------------------------");
