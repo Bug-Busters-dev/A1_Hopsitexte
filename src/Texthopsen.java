@@ -1,7 +1,9 @@
 
 public class Texthopsen {
     public char[] extractedLetters;
+    public boolean selbesFeld;
     public Hopser hopseText(String text){
+        selbesFeld = false;
 
         String ANSI_RESET = "\u001B[0m";
         String ANSI_RED = "\u001B[31m";
@@ -30,6 +32,7 @@ public class Texthopsen {
 
                 if (pos1InRange && pos2InRange && hopser.pos1.get(posi1) == i-irelewanteZeichen && hopser.pos2.get(posi2) == i-irelewanteZeichen) {
                     System.out.print(ANSI_PURPLE + text.charAt(i) + ANSI_RESET);
+                    selbesFeld = true;
                     if (posi1 < hopser.pos1.size()) posi1++;
                     if (posi2 < hopser.pos2.size()) posi2++;
                 } else if (pos1InRange && hopser.pos1.get(posi1) == i-irelewanteZeichen) {

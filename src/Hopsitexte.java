@@ -23,8 +23,8 @@ public class Hopsitexte {
         
         System.out.println("--------------------------------------------------------------------------------------------------------------------");
 
-        System.out.println("um mit der Erstellung eines Hopsitextes zu helfen kannst du nun immer einen Teil des volgenden Satzes schreiben bis du zum nachsten Buhstaben gelangst über den einer der Teilnehmer springt.");
-        System.out.println("Um fehler zu korigogieren kannst immer deinen letzten Schritt durch 'back' rückgängig machen.");
+        System.out.println("um mit der Erstellung eines Hopsitextes zu helfen kannst du nun immer einen Teil des volgenden Satzes schreiben bis du zum nächsten Buhstaben gelangst über den einer der Teilnehmer springt.");
+        System.out.println("Um Fehler zu korigogieren kannst immer deinen letzten Schritt durch 'back' rückgängig machen.");
         System.out.println("Wenn du deien Text beenden willst schreibe einfach 'end' in die Eingabe.");
 
         String lastText = "";
@@ -32,7 +32,7 @@ public class Hopsitexte {
         while (!aktuelleEingabe.equals("end")) {
             Hopser h = texthopsen.hopseText(text);
 
-            if (h.currendPos1 == h.currendPos2){
+            if (h.currendPos1 == h.currendPos2 || texthopsen.selbesFeld){
                 System.out.println("Bitte verwende ein anderes Wort da dein Text sonst kein Hopsitext sein kann.");
                 text = lastText;
             } else{
@@ -54,8 +54,8 @@ public class Hopsitexte {
                 if (aktuelleEingabe.equals("back")){
                     text = lastText;
                 } else{
-                lastText = text;
-                text = text + aktuelleEingabe;
+                    lastText = text;
+                    text = text + aktuelleEingabe;
 
                 }
             }
