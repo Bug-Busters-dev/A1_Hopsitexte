@@ -12,9 +12,17 @@ public class Hopsitexte {
 
         Texthopsen texthopsen = new Texthopsen();
 
-        System.out.println(ANSI_YELLOW + "Hopsitext editor 3000" + ANSI_RESET);
+        System.out.println("--------------------------------------------------------------------------------------------------------------------");
+
+        System.out.println(ANSI_YELLOW + "Hopsitext Editor 3000" + ANSI_RESET);
+
+        System.out.println("--------------------------------------------------------------------------------------------------------------------");
+
         System.out.println("um einen Hopsitext zu schreiben beginne in der folgenden Zeile mit deinem ersten Wort: ");
         String aktuelleEingabe = scanner.nextLine();
+        
+        System.out.println("--------------------------------------------------------------------------------------------------------------------");
+
         System.out.println("um mit der Erstellung eines Hopsitextes zu helfen kannst du nun immer einen Teil des volgenden Satzes schreiben bis du zum nachsten Buhstaben gelangst über den einer der Teilnehmer springt.");
         System.out.println("Um fehler zu korigogieren kannst immer deinen letzten Schritt durch 'back' rückgängig machen.");
         System.out.println("Wenn du deien Text beenden willst schreibe einfach 'end' in die Eingabe.");
