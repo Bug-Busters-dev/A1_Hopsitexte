@@ -13,19 +13,22 @@ public class Hopsitexte {
         Texthopsen texthopsen = new Texthopsen();
 
         System.out.println("--------------------------------------------------------------------------------------------------------------------");
-
-        System.out.println(ANSI_YELLOW + "Hopsitext Editor 3000" + ANSI_RESET);
-
+        System.out.println(ANSI_YELLOW + "Willkommen zum Hopsitext Editor 3000!" + ANSI_RESET);
         System.out.println("--------------------------------------------------------------------------------------------------------------------");
-
-        System.out.println("um einen Hopsitext zu schreiben beginne in der folgenden Zeile mit deinem ersten Wort: ");
+        System.out.println("Mit diesem Programm kannst du ganz einfach einen Hopsitext erstellen.");
+        System.out.println("Ein Hopsitext ist ein spezieller Text, bei dem sichergestellt wird, dass die Spieler beim Texthopsen nie auf derselben Stelle landen.");
+        System.out.println("--------------------------------------------------------------------------------------------------------------------");
+        System.out.println("So funktioniert es:");
+        System.out.println("- Beginne, indem du das erste Wort oder den ersten Satzteil in die Eingabezeile schreibst.");
+        System.out.println("- Der Editor zeigt dir dann die Positionen an, die beim Texthopsen relevant sind.");
+        System.out.println("- Schreibe deinen Text weiter, bis du zu einer markierten Position gelangst.");
+        System.out.println("- Wenn ein Konflikt auftritt (beide Spieler landen an derselben Stelle), wirst du benachrichtigt und kannst den letzten Schritt korrigieren.");
+        System.out.println("- Du kannst jederzeit den letzten Schritt mit 'back' rückgängig machen.");
+        System.out.println("- Um deinen Hopsitext fertigzustellen, gib 'end' ein.");
+        System.out.println("--------------------------------------------------------------------------------------------------------------------");
+        System.out.println("Starte jetzt mit deinem ersten Wort oder Satzteil:");
         String aktuelleEingabe = scanner.nextLine();
-        
-        System.out.println("--------------------------------------------------------------------------------------------------------------------");
 
-        System.out.println("um mit der Erstellung eines Hopsitextes zu helfen kannst du nun immer einen Teil des volgenden Satzes schreiben bis du zum nächsten Buhstaben gelangst über den einer der Teilnehmer springt.");
-        System.out.println("Um Fehler zu korigogieren kannst immer deinen letzten Schritt durch 'back' rückgängig machen.");
-        System.out.println("Wenn du deien Text beenden willst schreibe einfach 'end' in die Eingabe.");
 
         String lastText = "";
         String text = aktuelleEingabe;
