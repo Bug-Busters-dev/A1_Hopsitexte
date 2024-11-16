@@ -1,14 +1,13 @@
-import java.util.Scanner;
-
+import java.io.Console;
 public class Hopsitexte {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
         String ANSI_YELLOW = "\u001B[33m";
         String ANSI_RESET = "\u001B[0m";
         String ANSI_RED = "\u001B[31m";
         String ANSI_BLUE = "\u001B[34m";
         
-        Scanner scanner = new Scanner(System.in);
+        Console console = System.console();
 
         Texthopsen texthopsen = new Texthopsen();
 
@@ -27,13 +26,19 @@ public class Hopsitexte {
         System.out.println("- Um deinen Hopsitext fertigzustellen, gib 'end' ein.");
         System.out.println("--------------------------------------------------------------------------------------------------------------------");
         System.out.println("Starte jetzt mit deinem ersten Wort oder Satzteil:");
-        String aktuelleEingabe = scanner.nextLine();
+        String aktuelleEingabe = console.readLine();
 
 
         String lastText = "";
         String text = aktuelleEingabe;
         while (!aktuelleEingabe.equals("end")) {
-            Hopser h = texthopsen.hopseText(text);
+            Hopser h = new Hopser();
+            try {
+            h = texthopsen.hopseText(text);
+            } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+                System.out.println("Bitte überprüfe deinen bisherigen Text und passe ihn an, um den Fehler zu vermeiden.");
+                break;
+            }
 
             if (h.currendPos1 == h.currendPos2 || texthopsen.selbesFeld){
                 System.out.println("Bitte verwende ein anderes Wort da dein Text sonst kein Hopsitext sein kann.");
@@ -52,7 +57,7 @@ public class Hopsitexte {
                 System.out.println();
 
                 
-                aktuelleEingabe = scanner.nextLine();
+                aktuelleEingabe = console.readLine();
 
                 if (aktuelleEingabe.equals("back")){
                     text = lastText;
@@ -63,6 +68,5 @@ public class Hopsitexte {
                 }
             }
         }
-        scanner.close();
     }
 }
