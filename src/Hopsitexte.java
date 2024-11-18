@@ -14,11 +14,11 @@ public class Hopsitexte {
         System.out.println("--------------------------------------------------------------------------------------------------------------------");
         System.out.println(ANSI_YELLOW + "Willkommen zum Hopsitext Editor 3000!" + ANSI_RESET);
         System.out.println("--------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Mit diesem Programm kannst du ganz einfach einen Hopsitext erstellen.");
+        System.out.println("Mit diesem Programm kannst du ganz einfach einen Hopsitext schreiben.");
         System.out.println("Ein Hopsitext ist ein spezieller Text, bei dem sichergestellt wird, dass die Spieler beim Texthopsen nie auf derselben Stelle landen.");
         System.out.println("--------------------------------------------------------------------------------------------------------------------");
         System.out.println("So funktioniert es:");
-        System.out.println("- Beginne, indem du das erste Wort oder den ersten Satzteil in die Eingabezeile schreibst.");
+        System.out.println("- Beginne, indem du das erste Wort oder den ersten Satzteil in die Eingabezeile eingibst.");
         System.out.println("- Der Editor zeigt dir dann die Positionen an, die beim Texthopsen relevant sind.");
         System.out.println("- Schreibe deinen Text weiter, bis du zu einer markierten Position gelangst.");
         System.out.println("- Wenn ein Konflikt auftritt (beide Spieler landen an derselben Stelle), wirst du benachrichtigt und kannst den letzten Schritt korrigieren.");
